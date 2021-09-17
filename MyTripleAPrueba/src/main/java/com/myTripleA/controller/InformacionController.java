@@ -3,6 +3,8 @@ package com.myTripleA.controller;
 import java.util.Optional;
 import com.myTripleA.Service.InformacionService;
 import com.myTripleA.entity.Informacion;
+import com.myTripleA.entity.pruebaCategoria;
+
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
@@ -30,6 +32,11 @@ public class InformacionController {
 		return ResponseEntity.status(HttpStatus.CREATED).body(informacionService.save(informacion));
 		
 	}
+	//@PostMapping
+	//public ResponseEntity<?> createCategoria(@RequestBody pruebaCategoria categoria){
+	//	return ResponseEntity.status(HttpStatus.CREATED).body(informacionService.save(categoria));
+		
+	//}
 	//Lleer in insert
 	@GetMapping("/{id}/")
 	public ResponseEntity<?> read(@PathVariable(value="id") Long informacionId){

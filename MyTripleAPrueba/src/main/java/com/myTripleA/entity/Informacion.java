@@ -20,11 +20,11 @@ public class Informacion {
 	@Id
 	@GeneratedValue(strategy =GenerationType.IDENTITY)
 	private Long id;
-	@Column(length=50)
+	//@Column(length=50)
+	private String category_id;
+	//private String simbolo;
 	private String name;
-	private String simbolo;
-	private String categoria;
-	private String volumen;
+	//private String volumen;
 	//private BigInteger valor;
 	
 	public Long getId() {
@@ -36,31 +36,31 @@ public class Informacion {
 	public String getNombre() {
 		return name;
 	}
-	public void setNombre(String nombre) {
-		this.name = nombre;
+	public void setNombre(String name) {
+		this.name = name;
 	}
 	public String getSimbolo() {
-		return simbolo;
+		return category_id;
 	}
-	public void setSimbolo(String simbolo) {
-		this.simbolo = simbolo;
+	public void setSimbolo(String category_id) {
+		this.category_id = category_id;
 	}
-	public String getCategoria() {
-		return categoria;
-	}
-	public void setCategoria(String categoria) {
-		this.categoria = categoria;
-	}
-	public String getVolumen() {
-		return volumen;
-	}
-	public void setVolumen(String volumen) {
-		this.volumen = volumen;
-	}
-	//public BigInteger getPrecio() {
-		//return valor;
-	//}
-	//public void setPrecio(BigInteger precio) {
-		//this.valor = precio;
-	//}
+//	public String getCategoria() {
+//		return categoria;
+//	}
+//	public void setCategoria(String categoria) {
+//		this.categoria = categoria;
+//	}
+//	public String getVolumen() {
+//		return volumen;
+//	}
+//	public void setVolumen(String volumen) {
+//		this.volumen = volumen;
+//	}
+//	public BigInteger getPrecio() {
+//		return valor;
+//	}
+//	public void setPrecio(BigInteger precio) {
+//		this.valor = precio;
+//	}
 }

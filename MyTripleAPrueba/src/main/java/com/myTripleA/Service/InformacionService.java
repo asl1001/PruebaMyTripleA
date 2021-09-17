@@ -7,6 +7,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import com.myTripleA.entity.Informacion;
+import com.myTripleA.entity.pruebaCategoria;
 import com.myTripleA.Service.InformacionService;
 
 @Service
@@ -17,5 +18,6 @@ public interface InformacionService {
 	public Optional<Informacion>findById(Long id);
 	public Informacion save(Informacion informacion);
 	public void deletelyById(Long id);
+	public Object save(pruebaCategoria categoria);
 
 }
