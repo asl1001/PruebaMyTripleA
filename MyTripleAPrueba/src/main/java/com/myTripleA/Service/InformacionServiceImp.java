@@ -38,8 +38,8 @@ public class InformacionServiceImp implements InformacionService {
 		return InformacionDAO.findById(id);
 	}
 
-	@Override
-	@Transactional(readOnly=false)
+	//@Override
+	@Transactional
 	public Informacion save(Informacion informacion) {
 		// TODO Auto-generated method stub
 		return InformacionDAO.save(informacion);

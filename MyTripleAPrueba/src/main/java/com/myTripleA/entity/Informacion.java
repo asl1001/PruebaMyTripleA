@@ -20,7 +20,7 @@ public class Informacion {
 	@Id
 	@GeneratedValue(strategy =GenerationType.IDENTITY)
 	private Long id;
-	//@Column(length=50)
+	@Column(length=50)
 	private String category_id;
 	//private String simbolo;
 	private String name;
@@ -33,17 +33,30 @@ public class Informacion {
 	public void setId(Long id) {
 		this.id = id;
 	}
-	public String getNombre() {
-		return name;
-	}
-	public void setNombre(String name) {
-		this.name = name;
-	}
-	public String getSimbolo() {
+	//public String getNombre() {
+	//	return name;
+	//}
+	//public void setNombre(String name) {
+	//	this.name = name;
+	//}
+	public String getCategory_id() {
 		return category_id;
 	}
-	public void setSimbolo(String category_id) {
+	public void setCategory_id(String category_id) {
 		this.category_id = category_id;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+//	public String getSimbolo() {
+	//	return category_id;
+	//}
+	//public void setSimbolo(String category_id) {
+	//	this.category_id = category_id;
 	}
 //	public String getCategoria() {
 //		return categoria;
@@ -63,4 +76,4 @@ public class Informacion {
 //	public void setPrecio(BigInteger precio) {
 //		this.valor = precio;
 //	}
-}
+//}

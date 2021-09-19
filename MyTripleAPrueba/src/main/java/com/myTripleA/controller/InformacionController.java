@@ -1,7 +1,10 @@
 package com.myTripleA.controller;
 
 import java.util.Optional;
+
 import com.myTripleA.Service.InformacionService;
+import com.myTripleA.Service.Llamadas;
+import com.myTripleA.Service.LlamadasInterface;
 import com.myTripleA.entity.Informacion;
 import com.myTripleA.entity.pruebaCategoria;
 
@@ -16,6 +19,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.PutMapping;
 
@@ -25,6 +29,8 @@ import org.springframework.web.bind.annotation.PutMapping;
 public class InformacionController {
 	@Autowired
 	private InformacionService  informacionService;
+	@Autowired
+	private Llamadas llamada;
 	
 	//creamos una nueva informasion
 	@PostMapping
@@ -32,11 +38,12 @@ public class InformacionController {
 		return ResponseEntity.status(HttpStatus.CREATED).body(informacionService.save(informacion));
 		
 	}
-	//@PostMapping
-	//public ResponseEntity<?> createCategoria(@RequestBody pruebaCategoria categoria){
-	//	return ResponseEntity.status(HttpStatus.CREATED).body(informacionService.save(categoria));
+	@GetMapping("/cargar")
+	@ResponseStatus(HttpStatus.OK)
+	public void llamadas(){
+		llamada.llamaditas();
 		
-	//}
+	}
 	//Lleer in insert
 	@GetMapping("/{id}/")
 	public ResponseEntity<?> read(@PathVariable(value="id") Long informacionId){
